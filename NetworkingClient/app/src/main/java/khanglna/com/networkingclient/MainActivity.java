@@ -44,8 +44,25 @@ public class MainActivity extends Activity {
         txtMsgReceived = (TextView) findViewById(R.id.txtMsgReceived);
     }
 
+    //Download Image
+    public void clickToViewImg(View view) {
+    }
+
+    //Download Text
+    public void clickToViewText(View view) {
+    }
+
+    //Consume XML Web Services
+    public void clickToConsumeXml(View view) {
+    }
+
+    //Consume JSON Web Services
+    public void clickToConsumeJson(View view) {
+    }
+
+    //Socket Programing
     public void clickToSend(View view) {
-        MyClientTask client = new MyClientTask(IP_ADDRESS,Integer.parseInt(edtMsg.getText().toString()));
+        MyClientTask client = new MyClientTask(IP_ADDRESS, Integer.parseInt(edtMsg.getText().toString()));
         client.execute();
     }
 
@@ -68,19 +85,19 @@ public class MainActivity extends Activity {
                 byte[] buffer = new byte[1024];
                 int byteRead;
                 InputStream inputStream = socket.getInputStream();
-                while ((byteRead=inputStream.read(buffer))!=-1){
-                    byteArrayOutputStream.write(buffer,0,byteRead);
-                    response+=byteArrayOutputStream.toString("UTF-8");
+                while ((byteRead = inputStream.read(buffer)) != -1) {
+                    byteArrayOutputStream.write(buffer, 0, byteRead);
+                    response += byteArrayOutputStream.toString("UTF-8");
                 }
 
             } catch (UnknownHostException e) {
                 e.printStackTrace();
-                response="UnknowHostException: "+e.toString();
+                response = "UnknowHostException: " + e.toString();
             } catch (IOException e) {
                 e.printStackTrace();
-                response="IOException: "+e.toString();
-            }finally {
-                if (socket!=null){
+                response = "IOException: " + e.toString();
+            } finally {
+                if (socket != null) {
                     try {
                         socket.close();
                     } catch (IOException e) {

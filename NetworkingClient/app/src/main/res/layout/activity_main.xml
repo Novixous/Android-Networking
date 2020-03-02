@@ -30,7 +30,8 @@
             android:id="@+id/btnViewImg"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="View" />
+            android:text="View"
+            android:onClick="clickToViewImg"/>
     </LinearLayout>
 
     <TextView
@@ -58,7 +59,8 @@
             android:id="@+id/btnViewText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="View" />
+            android:text="View"
+            android:onClick="clickToViewText"/>
     </LinearLayout>
 
     <TextView
@@ -83,7 +85,8 @@
             android:id="@+id/btnConsumeXml"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="View" />
+            android:text="View"
+            android:onClick="clickToConsumeXml"/>
     </LinearLayout>
 
     <TextView
@@ -116,7 +119,8 @@
             android:id="@+id/btnConsumeJson"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="View" />
+            android:text="View"
+            android:onClick="clickToConsumeJson"/>
     </LinearLayout>
 
     <TextView
