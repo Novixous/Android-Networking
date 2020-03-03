@@ -3,6 +3,7 @@ package khanglna.com.networkingdemo;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.widget.TextView;
 
@@ -32,7 +33,9 @@ public class MainActivity extends AppCompatActivity {
         txtIPInfo = findViewById(R.id.txtInfoIP);
 
         txtIPInfo.setText(getIpAddress());
-        Thread socketServerThread = new Thread(new SocketServerThread());
+        ServerSocketTask serverSocketTask = new ServerSocketTask();
+        serverSocketTask.execute();
+
     }
 
     @Override
@@ -78,6 +81,15 @@ public class MainActivity extends AppCompatActivity {
             });
         }
     }
+    public class ServerSocketTask extends AsyncTask<Void, Void, String> {
+        @Override
+        protected String doInBackground(Void... voids) {
+            Thread socketServerThread = new Thread(new SocketServerThread());
+            socketServerThread.run();
+            return null;
+        }
+    }
+
 
     private class SocketServerThread extends Thread {
         public static final int SocketServerPORT = 8080;
@@ -106,7 +118,7 @@ public class MainActivity extends AppCompatActivity {
                     SocketServerReplyThread replyThread = new SocketServerReplyThread(socket, count);
                     replyThread.run();
                 }
-            } catch (IOException e) {
+            } catch (Exception e) {
                 e.printStackTrace();
             }
         }

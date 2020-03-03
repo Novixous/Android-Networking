@@ -29,7 +29,7 @@ public class MainActivity extends Activity {
     public static final String TEXT_URL = "";
     public static final String WORD_DEFINITION = "";
     public static final String JSON_URL = "";
-    public static final String IP_ADDRESS = "192.168.178.1";
+    public static final String IP_ADDRESS = "192.168.1.3";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
