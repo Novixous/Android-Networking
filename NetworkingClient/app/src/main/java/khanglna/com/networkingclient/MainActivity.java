@@ -52,7 +52,6 @@ public class MainActivity extends Activity {
     private ImageView img;
     private TextView txt;
     private EditText edtWord;
-    private TextView txtJson;
     private static TextView txtMsgReceived;
     private EditText edtMsg;
     public static final String KNIGHT_IMG = "";
@@ -69,7 +68,6 @@ public class MainActivity extends Activity {
         img = (ImageView) findViewById(R.id.img);
         txt = (TextView) findViewById(R.id.txtText);
         edtWord = (EditText) findViewById(R.id.edtWord);
-        txtJson = (TextView) findViewById(R.id.txtJson);
         edtMsg = (EditText) findViewById(R.id.editMessage);
         txtMsgReceived = (TextView) findViewById(R.id.txtMsgReceived);
 
