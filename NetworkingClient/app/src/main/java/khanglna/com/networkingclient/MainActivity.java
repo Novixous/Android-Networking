@@ -48,18 +48,12 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 
 public class MainActivity extends Activity {
-    final private int REQUEST_INTERNET = 123;
     private ImageView img;
     private TextView txt;
     private EditText edtWord;
     private static TextView txtMsgReceived;
     private EditText edtMsg;
-    public static final String KNIGHT_IMG = "";
-    public static final String BLADE_IMG = "";
-    public static final String TEXT_URL = "";
-    public static final String WORD_DEFINITION = "";
-    public static final String JSON_URL = "";
-    public static final String IP_ADDRESS = "10.0.2.15";
+    public static final String IP_ADDRESS = "192.168.1.2";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -200,6 +194,7 @@ public class MainActivity extends Activity {
         protected void onPostExecute(Bitmap result) {
             img.setImageBitmap(result);
         }
+
     }
 
     private String DownloadText(String URL) {

@@ -33,8 +33,8 @@ public class MainActivity extends AppCompatActivity {
         txtIPInfo = findViewById(R.id.txtInfoIP);
 
         txtIPInfo.setText(getIpAddress());
-        ServerSocketTask serverSocketTask = new ServerSocketTask();
-        serverSocketTask.execute();
+        Thread serverSocketThread = new Thread(new SocketServerThread());
+        serverSocketThread.start();
 
     }
 
@@ -81,15 +81,6 @@ public class MainActivity extends AppCompatActivity {
             });
         }
     }
-    public class ServerSocketTask extends AsyncTask<Void, Void, String> {
-        @Override
-        protected String doInBackground(Void... voids) {
-            Thread socketServerThread = new Thread(new SocketServerThread());
-            socketServerThread.run();
-            return null;
-        }
-    }
-
 
     private class SocketServerThread extends Thread {
         public static final int SocketServerPORT = 8080;
